@@ -5,11 +5,11 @@
 |name|text|null: false|
 |email|text|null: false|
 
-###Association
+### Association
 - has_many :groups ,through: :users_groups
 - has_many :messages
 
-##messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
@@ -17,26 +17,26 @@
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :users
 - belongs_to :groups
 
-##groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |messages_id|integer|null: false, foreign_key: true|
 |users_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - has_many :messages
 - belongs_to :users ,through: :users_groups
 
-##users_groupsテーブル
+## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |users_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :group
 - belongs_to :user
