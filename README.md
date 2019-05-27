@@ -30,7 +30,7 @@
 
 ### Association
 - has_many :messages
-- belongs_to :user, through: :user_group
+- has_many :users, through: :user_group
 - belongs_to :user_group
 
 ## users_groupsテーブル
