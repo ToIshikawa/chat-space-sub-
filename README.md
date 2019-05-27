@@ -29,7 +29,7 @@
 
 ### Association
 - has_many :messages
-- has_many :users, through: :user_group
+- has_many :users, through: :user_groups
 - has_many :users_groups
 
 ## users_groupsテーブル
