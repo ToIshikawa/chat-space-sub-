@@ -13,8 +13,8 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|mediumblog||
+|body|text||
+|image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -25,13 +25,12 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|messages_id|integer|null: false, foreign_key: true|
-|users_id|integer|null: false, foreign_key: true|
+|group_name|text|null: false|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :user_group
-- belongs_to :user_group
+- has_many :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
